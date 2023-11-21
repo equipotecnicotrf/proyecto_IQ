@@ -1,0 +1,4 @@
+# Ignorar la carpeta config
+config/
+# Ignorar el archivo application.properties
+application.properties
