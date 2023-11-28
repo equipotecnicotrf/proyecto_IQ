@@ -1,0 +1,10 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£ô¤Ã
+n
+java:S3305"SInject this field value directly into "generateStep", the only method that uses it.(ŞèÉÔøÿÿÿÿ
+n
+java:S3305"SInject this field value directly into "generateStep", the only method that uses it.(êÎ‰Ìúÿÿÿÿ
+q
+java:S3305"VInject this field value directly into "generateFactura", the only method that uses it.(İ˜µıÿÿÿÿ
+n
+java:S3305"SInject this field value directly into "generateStep", the only method that uses it.(ÑôÙ£ûÿÿÿÿ

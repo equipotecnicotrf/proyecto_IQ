@@ -307,11 +307,11 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 						
 						
 						String taxRateDecimal = df.format(detalle.getDetaImp().getTaxRate());
-						
+						Boolean hasTaxes = detalle.getDetaImp().getTaxAmt() == null || detalle.getDetaImp().getTaxAmt() == 0 ? false : true;
 
-						
+						//Lines
 
-						sbDetalle.append("[@@CRLF]")
+						sbDetalle.append("[@@CRLF]")//Se debe quitar?
 						/* 1 */.append(i == 0 ? "¬" : "").append((detalle.getDescripcion())).append("|")
 						/* 2 */.append(cantidadDecimal == null ? "" : cantidadDecimal).append("|")
 						/* 3 */.append(detalle.getUnidadDian() == null ? "" : detalle.getUnidadDian()).append("|")
@@ -343,10 +343,10 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 						/* 29 */.append("|")
 						/* 30 */.append("|")
 						/* 31 */.append("|")
-						/* 32 */.append(item.getCompania().getAbreviatura() == null ? "" : item.getCompania().getAbreviatura()).append("|")
+						/* 32 */.append("|")//Se borro logica
 						/* 33 */.append("|")
 						/* 34 */.append("|")
-						/* 35 */.append(detalle.getLineaCodArticulo() == null ? "" : detalle.getLineaCodArticulo()).append("|")
+						/* 35 */.append("|")//Se borro logica
 						/* 36 */.append("|")
 						/* 37 */.append("|")
 						/* 38 */.append("|")
@@ -379,19 +379,21 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 						/* 72 */.append("|")/* 73 */.append("|")/* 74 */.append("|")/* 75 */.append("|")
 						/* 76 */.append("|")/* 77 */.append("|")/* 78 */.append("|")/* 79 */.append("|")
 						/* 80 */.append("|")/* 81 */.append("|")/* 82 */.append("|")/* 83 */.append("|")
-						/* 84 */.append("ES").append("|")/* 85 */.append("|")/* 86 */.append("|")/* 87 */.append("|")
+						/* 84 */.append("|")//Se borro logica
+                        /* 85 */.append("|")/* 86 */.append("|")/* 87 */.append("|")
 						/* 88 */.append("|")
 						/* 89 */.append("|")/* 90 */.append("|")/* 91 */.append("|")
 						/* 92 */.append("|")/* 93 */.append("|")/* 94 */.append("|")/* 95 */.append("|")
 						/* 96 */.append("|")/* 97 */.append("|")/* 98 */.append("|")
-						/* 99 */.append(detalle.getLineaCodArticulo() == null ? "" : detalle.getLineaCodArticulo()).append((char) 92).append("I").append("|")								
-						/* 100 */.append("TR").append("|")
-						/* 101 */.append(df.format(detalle.getDetaImp().getTaxRate())).append("|")
-						/* 102 */.append(unroundedTax).append("|")
-						/* 103 */.append(subtotalLinea).append("|")
-						/* 104 */.append("").append("|")
+						/* 99 */.append("|")//Se borro logica
+						/* 100 */.append(hasTaxes == true ? "TR" : "").append("|")
+						/* 101 */.append(hasTaxes == true ? df.format(detalle.getDetaImp().getTaxRate()) : "").append("|")
+						/* 102 */.append(hasTaxes == true ? unroundedTax : "").append("|")
+						/* 103 */.append(hasTaxes == true ? subtotalLinea : "").append("|")
+						///* 104 */.append("").append("|")
+                        /* 104 */.append(hasTaxes == true ? item.getMonedaDocu() : "").append("|")//Se cambio la logica
 						/* 105 */.append("").append("|")
-						/* 106 */.append("01").append("|")
+						/* 106 */.append(hasTaxes == true ? "01" : "").append("|")
 						/* 107 */.append("");
 
 						i++;
@@ -601,51 +603,47 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 						
 					}
 					
-					
+					//Headers
 					StringBuilder sb = new StringBuilder();
 					
 					/* 1 */sb.append("~").append(item.getTrxNumber()).append("|")
 							/* 2 */.append(item.getNombreEmisor() == null ? "" : item.getNombreEmisor()).append("|")
 							/* 3 */.append(item.getNitEmisor() == null ? "" : item.getNitEmisor()).append("|")
-							/* 4 */.append(item.getEmisorDireccion() == null ? "" : item.getEmisorDireccion())
-							.append("|")/* 5 */.append(domEmisorNoExterior).append("|")
+							/* 4 */.append(item.getEmisorDireccion() == null ? "" : item.getEmisorDireccion()).append("|")
+							/* 5 */.append(domEmisorNoExterior).append("|")
 							/* 6 */.append(domEmisorNoInterior).append("|")
-							/* 7 */.append(item.getEmisorDpto() == null ? "" : item.getEmisorDpto()).append("|")
+							/* 7 */.append("|")//Se borro logica
 							/* 8 */.append(item.getEmisorCiudad() == null ? "" : item.getEmisorCiudad()).append("|")
 							/* 9 */.append(item.getCodDptoEmisor() == null ? "" : item.getCodDptoEmisor()).append("|")
-							/* 10 */.append(item.getCodCiudadEmisor().substring(item.getCodDptoEmisor().length(), item.getCodCiudadEmisor().length()))
-							.append("|")// fila 10?
+							/* 10 */.append(item.getCodCiudadEmisor().substring(item.getCodDptoEmisor().length(), item.getCodCiudadEmisor().length())).append("|")// fila 10?
 							/* 11 */.append(item.getEmisorDpto() == null ? "" : item.getEmisorDpto()).append("|")
 							/* 12 */.append(item.getEmisorPais() == null ? "" : item.getEmisorPais()).append("|")
-							/* 13 */.append(item.getCompania().getCodigoPostal() == null ? ""
-									: item.getCompania().getCodigoPostal())
-							.append("|")/* 14 */.append("|")/* 15 */.append("|")/* 16 */.append("|")/* 17 */.append("|")
+							/* 13 */.append(item.getCompania().getCodigoPostal() == null ? "" : item.getCompania().getCodigoPostal()).append("|")
+							/* 14 */.append("|")/* 15 */.append("|")/* 16 */.append("|")/* 17 */.append("|")
 							/* 18 */.append("|")/* 19 */.append("|")/* 20 */.append("|")/* 21 */.append("|")
 							/* 22 */.append("|")/* 23 */.append("|")/* 24 */.append("|")/* 25 */.append("|")
 							/* 26 */.append("DIAN 2.1|")
 							/* 27 */.append(resolucionDTO.getSerie()).append("|")
 							/* 28 */.append(resolucionDTO.getNroAprobacion()).append("|")
-							/* 29 */.append(
-									item.getDiasPago() == null ? "1" : (item.getDiasPago().equals("0") ? "1" : "2"))
-							.append("|")/* 30 */.append(item.getFechaDocu() == null ? "" : item.getFechaDocu())
-							.append("|")/* 31 */.append(item.getHora()).append("|")
-							/* 32 */.append(item.getEmisorDireccion() == null ? "" : item.getEmisorDireccion())
-							.append("|")/* 33 */.append(domEmisorNoExterior).append("|")
+							/* 29 */.append(item.getDiasPago() == null ? "1" : (item.getDiasPago().equals("0") ? "1" : "2")).append("|")
+							/* 30 */.append(item.getFechaDocu() == null ? "" : item.getFechaDocu()).append("|")
+							/* 31 */.append(item.getHora()).append("|")
+							/* 32 */.append(item.getEmisorDireccion() == null ? "" : item.getEmisorDireccion()).append("|")
+							/* 33 */.append(domEmisorNoExterior).append("|")
 							/* 34 */.append(domEmisorNoInterior).append("|")
-							/* 35 */.append(item.getEmisorDpto() == null ? "" : item.getEmisorDpto()).append("|")
+							/* 35 */.append("|")//Se borro logica
 							/* 36 */.append(item.getEmisorCiudad() == null ? "" : item.getEmisorCiudad()).append("|")
 							/* 37 */.append(item.getCodDptoEmisor() == null ? "" : item.getCodDptoEmisor()).append("|")
-							/* 38 */.append(item.getCodCiudadEmisor().substring(item.getCodDptoEmisor().length(), item.getCodCiudadEmisor().length()))
-							.append("|")// fila 10?
+							/* 38 */.append(item.getCodCiudadEmisor().substring(item.getCodDptoEmisor().length(), item.getCodCiudadEmisor().length())).append("|")// fila 10?
 							/* 39 */.append(item.getEmisorDpto() == null ? "" : item.getEmisorDpto()).append("|")
 							/* 40 */.append(item.getEmisorPais() == null ? "" : item.getEmisorPais()).append("|")
-							/* 41 */.append("|")
+							/* 41 */.append(item.getCodCiudadEmisor().substring(item.getCodDptoEmisor().length(), item.getCodCiudadEmisor().length())).append("|")// fila 10? - se modifico
 							/* 42 */.append(partyName == null ? "" : partyName).append("|")
 							/* 43 */.append(nitCliente).append("|")
 							/* 44 */.append(adress1 == null ? "" : adress1).append("|")
 							/* 45 */.append("|")
 							/* 46 */.append("|")
-							/* 47 */.append(StringUtils.isBlank(item.getBillTo().getState()) ? "ND" : item.getBillTo().getState()).append("|")
+							/* 47 */.append("|")//Se borro logica
 							/* 48 */.append(city == null ? "" : city).append("|")
 							/* 49 */.append(StringUtils.isBlank(item.getBillTo().getCodDptoReceptor()) ? "ND" : item.getBillTo().getCodDptoReceptor()).append("|")
 							/* 50 */.append(StringUtils.isBlank(item.getBillTo().getCodCiudadReceptor()) ? "ND" : item.getBillTo().getCodCiudadReceptor()).append("|")
@@ -664,7 +662,7 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							/* 63 */.append("|")
 							/* 64 */.append("|")
 							/* 65 */.append("|")
-							/* 66 */.append(item.getOrdenCompra() == null ? "" : item.getOrdenCompra()).append("|")
+							/* 66 */.append("|")//Se borro logica
 							/* 67 */.append("|")
 							/* 68 */.append("|")
 							/* 69 */.append("|")
@@ -693,7 +691,7 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							/* 92 */.append("|")
 							/* 93 */.append("|")
 							/* 94 */.append(item.getCodVendedor() == null ? "" : item.getCodVendedor()).append("|")
-							/* 95 */.append(item.getNombreVendedor() == null ? "" : item.getNombreVendedor()).append("|")
+							/* 95 */.append("|")//Se borro logica
 							/* 96 */.append("|")
 							/* 97 */.append("|")
 							/* 98 */.append("|")
@@ -708,10 +706,14 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							/* 107 */.append("|")
 							/* 108 */.append(montoOtrosImp).append("|")
 							/* 109 */.append(campo56).append("|")
-							/* 110 */.append("|")/* 111 */.append("|")
-							/* 112 */.append("|")
+							/* 110 */.append("|")
+							/* 111 */.append("|")
+							/* 112 */.append(monedaDocumento).append("|")//Se cambio
 							/* 113 */.append("|")
-							/* 114 */.append(item.getFechaVencimiento() == null ? "" : item.getFechaVencimiento()).append("|")/* 115 */.append("|")/* 116 */.append("|")/* 117 */.append("|")
+							/* 114 */.append(item.getFechaVencimiento() == null ? "" : item.getFechaVencimiento()).append("|")
+							/* 115 */.append("|")
+							/* 116 */.append("|")
+							/* 117 */.append("|")
 							/* 118 */.append(misc06).append("|")
 							/* 119 */.append("|")
 							/* 120 */.append("|")
@@ -722,54 +724,71 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							/* 125 */.append("|")
 							/* 126 */.append("|")
 							/* 127 */.append(item.getMailEnvio() == null ? "" : item.getMailEnvio()).append("|")
-							/* 128 */.append("|")/* 129 */.append(item.getRemision() == null ? "" : item.getRemision())
-							.append("|")/* 130 */.append(item.getPedido() == null ? "" : item.getPedido()).append("|")
-							/* 131 */.append(textoResolucion).append("|")/* 132 */.append("|")/* 133 */.append("|")
-							/* 134 */.append("|")/* 135 */.append("|")/* 136 */.append("|")/* 137 */.append("|")
+							/* 128 */.append("|")
+							/* 129 */.append(item.getRemision() == null ? "" : item.getRemision()).append("|")
+							/* 130 */.append(item.getPedido() == null ? "" : item.getPedido()).append("|")
+							/* 131 */.append("|")//Se borro logica
+							/* 132 */.append("|")
+							/* 133 */.append("|")
+							/* 134 */.append("|")
+							/* 135 */.append("|")
+							/* 136 */.append("|")
+							/* 137 */.append("|")
 							/* 138 */.append(!item.getCompania().getTipo().equals("N") ? "R-99-PN" : item.getCompania().getRegimen()).append("|")
 							/* 139 */.append(misc27).append("|")
 							/* 140 */.append(misc28).append("|")
 							/* 141 */.append("|")
 							/* 142 */.append(item.getCompania().getAbreviatura()).append("-")
-							.append(item.getTipoCfd()).append("-").append(item.getCompania().getTipo()).append("-")
-							.append(resolucionDTO.getSerie()).append("-").append(item.getTrxNumber()).append("|")
+							         .append(item.getTipoCfd()).append("-").append(item.getCompania().getTipo()).append("-")
+							         .append(resolucionDTO.getSerie()).append("-").append(item.getTrxNumber()).append("|")
 							/* 143 */.append("|")
-							/* 144 */.append(docuEmisorSubString.substring(10, 11) == null ? ""
-									: docuEmisorSubString.substring(10, 11))
-							.append("|")
+							/* 144 */.append(docuEmisorSubString.substring(10, 11) == null ? "" : docuEmisorSubString.substring(10, 11)).append("|")
 							/* 145 */.append("|")
 							/* 146 */.append(item.getCompania().getTipo().equals("N") ? item.getDigitoVerificacion() : "").append("|")
 							/* 147 */.append(monedaDocumento).append("|")
-							/* 148 */.append("|")/* 149 */.append("|")/* 150 */.append(misc38).append("|")
-							/* 151 */.append(misc39).append("|")/* 152 */.append("|")
-							/* 153 */.append(!item.getBillTo().getMonedaImp().equals("COP") ? df.format(item.getTrm()) : "1.00")
-							.append("|")/* 154 */.append("|")/* 155 */.append("|")
+							/* 148 */.append("|")
+							/* 149 */.append("|")
+							/* 150 */.append("|")//Se borro logica
+							/* 151 */.append(misc39).append("|")
+							/* 152 */.append("|")
+							/* 153 */.append(!item.getBillTo().getMonedaImp().equals("COP") ? df.format(item.getTrm()) : "1.00").append("|")
+							/* 154 */.append("|")
+							/* 155 */.append("|")
 							/* 156 */.append(item.getCompania().getEmail() == null ? "" : item.getCompania().getEmail()).append("|")
 							/* 157 */.append("0.00").append("|")
 							/* 158 */.append(montoTotalSerExen).append("|")
 							/* 159 */.append(montoTotalMerGrav).append("|")
-							/* 160 */.append(montoTotalMerExen).append("|")/* 161 */.append(resolucionDTO.getFechaResolucion()).append("|")
-							/* 162 */.append(item.getRazonReferencia() != null ? item.getRazonReferencia() : "").append("|")/* 163 */.append("|")
-							/* 164 */.append("|")/* 165 */.append(resolucionDTO.getRangoResolucion()).append("|")// query
+							/* 160 */.append(montoTotalMerExen).append("|")
+							/* 161 */.append(resolucionDTO.getFechaResolucion()).append("|")
+							/* 162 */.append(item.getRazonReferencia() != null ? item.getRazonReferencia() : "").append("|")
+							/* 163 */.append("|")
+							/* 164 */.append("|")
+							/* 165 */.append(resolucionDTO.getRangoResolucion()).append("|")// query
 							/* 166 */.append("|")
 							/* 167 */.append(String.valueOf(item.getCompania().getTipo()).equals("N") ? "01" : "02").append("|")
-							/* 168 */.append(item.getCompania().getResponsabilidad() == null ? ""
-									: item.getCompania().getResponsabilidad())
-							.append("|")/* 169 */.append(item.getNroEnvio() == null ? "" : item.getNroEnvio())
-							.append("|")/* 170 */.append("|")/* 171 */.append("|")/* 172 */.append("|")
-							/* 173 */.append("|")/* 174 */.append("|")/* 175 */.append("|")
+							/* 168 */.append(item.getCompania().getResponsabilidad() == null ? "" : item.getCompania().getResponsabilidad()).append("|")
+							/* 169 */.append(item.getNroEnvio() == null ? "" : item.getNroEnvio()).append("|")
+							/* 170 */.append("|")
+							/* 171 */.append("|")
+							/* 172 */.append("|")
+							/* 173 */.append("|")
+							/* 174 */.append("|")
+							/* 175 */.append("|")
 							/* 176 */.append(item.getTrxNumber() == null ? "" : item.getTrxNumber()).append("|")
-							/* 177 */.append(!item.getBillTo().getMonedaImp().equals("COP") ? df.format(item.getTrm()) : "1.00")
-							.append("|")
+							/* 177 */.append(!item.getBillTo().getMonedaImp().equals("COP") ? df.format(item.getTrm()) : "1.00").append("|")
 							/* 178 */.append(tipoDocIdEmisor).append("|")
 							/* 179 */.append(attribute2 == null ? "" : attribute2).append("|")
 							/* 180 */.append(tipoPersonaEmisor).append("|")
-							/* 181 */.append(attribute8.equals("N") ? "2" : "1").append("|")/* 182 */.append("|")
-							/* 183 */.append("|")/* 184 */.append("|")/* 185 */.append("|")
+							/* 181 */.append(attribute8.equals("N") ? "2" : "1").append("|")
+							/* 182 */.append("|")
+							/* 183 */.append("|")
+							/* 184 */.append("|")
+							/* 185 */.append("|")
 							/* 186 */.append(montoTotalRecargos).append("|")
 							/* 187 */.append(campo187).append("|")
 							/* 188 */.append(resolucionDTO.getClaveTecnica()).append("|")
-							/* 189 */.append("|")/* 190 */.append(metodoPago).append("|")
+							/* 189 */.append("|")
+							/* 190 */.append(metodoPago).append("|")
 							/* 191 */.append(item.getCodReferencia() != null ? item.getCodReferencia() : "").append("|")
 							/* 192 */.append(montoTotalGravado).append("|")
 							/* 193 */.append(montoTotalExento);

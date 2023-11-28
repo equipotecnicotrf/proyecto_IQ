@@ -2,3 +2,5 @@
 y
 java:S1192Z"cDefine a constant instead of duplicating this literal "Error in executeDocumentGeneration" 4 times.(¡ÅÃ‚
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ž®¥Ÿ
+G
+java:S1181b"%Catch Exception instead of Throwable.(‡˜ÚÚøÿÿÿÿ8ÀŽ¯”¿1
