@@ -293,21 +293,27 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							subtotalLinea = df.format(Math.abs(Math.round(detalle.getSubtotalLinea() * item.getTrm())));
 							//taxAmt = df.format(Math.abs(Math.round(detalle.getDetaImp().getTaxAmt() * item.getTrm())));
 							//unroundedTax = df.format(Math.round(detalle.getDetaImp().getUnroundedTaxAmt() * item.getTrm()));
-							ivaAcumulado += Math.abs(Math.round(detalle.getDetaImp().getTaxAmt() * item.getTrm()));
-							taxAmt = df.format(Math.round((detalle.getSubtotalLinea() * (detalle.getDetaImp().getTaxRate()/100)) * item.getTrm()));
-							unroundedTax = df.format(Math.round((detalle.getSubtotalLinea() * (detalle.getDetaImp().getTaxRate()/100)) * item.getTrm()));
+							//ivaAcumulado += Math.abs(Math.round(detalle.getDetaImp().getTaxAmt() * item.getTrm()));
+							ivaAcumulado += Math.abs(Math.round(detalle.getIvaLinea() * item.getTrm()));
+							//taxAmt = df.format(Math.round((detalle.getSubtotalLinea() * (detalle.getDetaImp().getTaxRate()/100)) * item.getTrm()));
+							taxAmt = df.format(Math.round((detalle.getSubtotalLinea() * (detalle.getTaxRate()/100)) * item.getTrm()));
+							//unroundedTax = df.format(Math.round((detalle.getSubtotalLinea() * (detalle.getDetaImp().getTaxRate()/100)) * item.getTrm()));
+							unroundedTax = df.format(Math.round((detalle.getSubtotalLinea() * (detalle.getTaxRate()/100)) * item.getTrm()));
 							
 						} else {
 							precio = df.format(detalle.getPrecio());
 							subtotalLinea = df.format(Math.abs(detalle.getSubtotalLinea()));
-							taxAmt = df.format(Math.abs(detalle.getDetaImp().getTaxAmt()));
-							unroundedTax = df.format(detalle.getDetaImp().getUnroundedTaxAmt());
-							ivaAcumulado += Math.abs(detalle.getDetaImp().getTaxAmt());
+							//taxAmt = df.format(Math.abs(detalle.getDetaImp().getTaxAmt()));
+							taxAmt = df.format(Math.abs(detalle.getIvaLinea()));
+							//unroundedTax = df.format(detalle.getDetaImp().getUnroundedTaxAmt());
+							unroundedTax = df.format(detalle.getIvaLinea());
+							//ivaAcumulado += Math.abs(detalle.getDetaImp().getTaxAmt());
+							ivaAcumulado += Math.abs(detalle.getIvaLinea());
 						}
 						
 						
-						String taxRateDecimal = df.format(detalle.getDetaImp().getTaxRate());
-						Boolean hasTaxes = detalle.getDetaImp().getTaxAmt() == null || detalle.getDetaImp().getTaxAmt() == 0 ? false : true;
+						String taxRateDecimal = df.format(detalle.getTaxRate());
+						Boolean hasTaxes = detalle.getIvaLinea() == null || detalle.getIvaLinea() == 0 ? false : true;
 
 						//Lines
 
@@ -347,9 +353,9 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 						/* 33 */.append("|")
 						/* 34 */.append("|")
 						/* 35 */.append("|")//Se borro logica
-						/* 36 */.append("|")
-						/* 37 */.append("|")
-						/* 38 */.append("|")
+						/* 36 */.append(detalle.getColumna36() == null ? "" : detalle.getColumna36()).append("|")
+						/* 37 */.append(detalle.getColumna37() == null ? "" : detalle.getColumna37()).append("|")
+						/* 38 */.append(detalle.getColumna38() == null ? "" : detalle.getColumna38()).append("|")
 						/* 39 */.append("|")
 						/* 40 */.append("|")
 						/* 41 */.append("|")
@@ -387,7 +393,7 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 						/* 96 */.append("|")/* 97 */.append("|")/* 98 */.append("|")
 						/* 99 */.append("|")//Se borro logica
 						/* 100 */.append(hasTaxes == true ? "TR" : "").append("|")
-						/* 101 */.append(hasTaxes == true ? df.format(detalle.getDetaImp().getTaxRate()) : "").append("|")
+						/* 101 */.append(hasTaxes == true ? df.format(detalle.getTaxRate()) : "").append("|")
 						/* 102 */.append(hasTaxes == true ? unroundedTax : "").append("|")
 						/* 103 */.append(hasTaxes == true ? subtotalLinea : "").append("|")
 						///* 104 */.append("").append("|")
@@ -637,7 +643,7 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							/* 38 */.append(item.getCodCiudadEmisor().substring(item.getCodDptoEmisor().length(), item.getCodCiudadEmisor().length())).append("|")// fila 10?
 							/* 39 */.append(item.getEmisorDpto() == null ? "" : item.getEmisorDpto()).append("|")
 							/* 40 */.append(item.getEmisorPais() == null ? "" : item.getEmisorPais()).append("|")
-							/* 41 */.append(item.getCodCiudadEmisor().substring(item.getCodDptoEmisor().length(), item.getCodCiudadEmisor().length())).append("|")// fila 10? - se modifico
+							/* 41 */.append(item.getCodCiudadEmisor().substring(item.getCodDptoEmisor().length(), item.getCodCiudadEmisor().length())).append("|")//se modifico
 							/* 42 */.append(partyName == null ? "" : partyName).append("|")
 							/* 43 */.append(nitCliente).append("|")
 							/* 44 */.append(adress1 == null ? "" : adress1).append("|")
@@ -690,11 +696,11 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							/* 91 */.append(item.getFechaVencimiento() == null ? "" : item.getFechaVencimiento()).append("|")
 							/* 92 */.append("|")
 							/* 93 */.append("|")
-							/* 94 */.append(item.getCodVendedor() == null ? "" : item.getCodVendedor()).append("|")
+							/* 94 */.append("|")//Se borro logica
 							/* 95 */.append("|")//Se borro logica
 							/* 96 */.append("|")
 							/* 97 */.append("|")
-							/* 98 */.append("|")
+							/* 98 */.append(item.getColumna98()).append("|")
 							/* 99 */.append("|")
 							/* 100 */.append(campo56.contains(",") ? NumerosALetras.convertirNumeroALetras(Double.valueOf(campo56.replace(",",".")), monedaDocumento): NumerosALetras.convertirNumeroALetras(Double.valueOf(campo56), monedaDocumento)).append("|")
 							/* 101 */.append("|")
@@ -717,7 +723,7 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							/* 118 */.append(misc06).append("|")
 							/* 119 */.append("|")
 							/* 120 */.append("|")
-							/* 121 */.append(misc09).append("|")
+							/* 121 */.append("|")//Se borro la logica
 							/* 122 */.append("|")
 							/* 123 */.append("|")
 							/* 124 */.append("|")
@@ -737,11 +743,12 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							/* 138 */.append(!item.getCompania().getTipo().equals("N") ? "R-99-PN" : item.getCompania().getRegimen()).append("|")
 							/* 139 */.append(misc27).append("|")
 							/* 140 */.append(misc28).append("|")
-							/* 141 */.append("|")
-							/* 142 */.append(item.getCompania().getAbreviatura()).append("-")
+							/* 141 */.append(item.getTrm()).append("|")//Se cambio logica
+							/* 142 *//*.append(item.getCompania().getAbreviatura()).append("-")
 							         .append(item.getTipoCfd()).append("-").append(item.getCompania().getTipo()).append("-")
-							         .append(resolucionDTO.getSerie()).append("-").append(item.getTrxNumber()).append("|")
-							/* 143 */.append("|")
+							         .append(resolucionDTO.getSerie()).append("-").append(item.getTrxNumber()).append("|")*/
+							/* 142 */.append(item.getColumna142()).append("|")
+							/* 143 */.append(item.getColumna143()).append("|")
 							/* 144 */.append(docuEmisorSubString.substring(10, 11) == null ? "" : docuEmisorSubString.substring(10, 11)).append("|")
 							/* 145 */.append("|")
 							/* 146 */.append(item.getCompania().getTipo().equals("N") ? item.getDigitoVerificacion() : "").append("|")
@@ -788,7 +795,7 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							/* 187 */.append(campo187).append("|")
 							/* 188 */.append(resolucionDTO.getClaveTecnica()).append("|")
 							/* 189 */.append("|")
-							/* 190 */.append(metodoPago).append("|")
+							/* 190 */.append("31").append("|")//se cambio la logica
 							/* 191 */.append(item.getCodReferencia() != null ? item.getCodReferencia() : "").append("|")
 							/* 192 */.append(montoTotalGravado).append("|")
 							/* 193 */.append(montoTotalExento);

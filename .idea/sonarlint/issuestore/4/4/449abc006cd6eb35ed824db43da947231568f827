@@ -1,2 +1,9 @@
 
-n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(­Ÿ	
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(­Ÿ	8Ä˜¬§Ã1
+o	java:S116."TRename this field "Columna36" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÙØq8È˜¬§Ã1
+p	java:S1163"TRename this field "Columna37" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï¬îï8É˜¬§Ã1
+p	java:S1168"TRename this field "Columna38" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­÷Û¼8É˜¬§Ã1
+n	java:S116="SRename this field "IvaLinea" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦†òN8É˜¬§Ã1
+s	java:S116B"RRename this field "TaxRate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ı¡áùÿÿÿÿ8Ë˜¬§Ã1
+j	java:S116G"NRename this field "Tax" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î©¾8Ë˜¬§Ã1
+X	java:S125L"<This block of commented-out lines of code should be removed.(¬˜Çè8Õ˜¬§Ã1

@@ -114,6 +114,15 @@ public class HeadDTO {
 	
 	@JsonProperty("BILL_TO")
 	private BillToDTO billTo;
+
+	@JsonProperty("COLUMNA_98")
+	private String columna98;
+
+	@JsonProperty("COLUMNA_142")
+	private String columna142;
+
+	@JsonProperty("COLUMNA_143")
+	private String columna143;
 	
 	@JsonProperty("DETALLE")
 	@JacksonXmlElementWrapper(useWrapping = false)

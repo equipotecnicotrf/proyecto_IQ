@@ -39,10 +39,40 @@ public class DetalleDTO {
 	@ApiModelProperty(notes = "Linea_Cod_Articulo")
 	@JsonProperty("LINEA_COD_ARTICULO")
 	private String lineaCodArticulo;
-	
+
 	@NotNull
-	@ApiModelProperty(notes = "DetaImpDTO")
+	@ApiModelProperty(notes = "Columna_36")
+	@JsonProperty("COLUMNA_36")
+	private String Columna36;
+
+	@NotNull
+	@ApiModelProperty(notes = "Columna_37")
+	@JsonProperty("COLUMNA_37")
+	private String Columna37;
+
+	@NotNull
+	@ApiModelProperty(notes = "Columna_38")
+	@JsonProperty("COLUMNA_38")
+	private String Columna38;
+
+	@NotNull
+	@ApiModelProperty(notes = "IvaLinea")
+	@JsonProperty("IVA_LINEA")
+	private Double IvaLinea;//Campo que sustituye el taxAmt y el unroundedTaxAmt del DetaImpDTO
+
+	@NotNull
+	@ApiModelProperty(notes = "TaxRate")
+	@JsonProperty("TAX_RATE")
+	private Double TaxRate;//Campo que sustituye el taxRate del DetaImpDTO
+
+	@NotNull
+	@ApiModelProperty(notes = "Tax")
+	@JsonProperty("TAX")
+	private Double Tax;//Campo que sustituye el tax del DetaImpDTO
+	
+	/*@NotNull
+	@ApiModelProperty(notes = "DetaImpDTO")//Este campo se elimina debido a que se elimino el data set de DETA_IMP
 	@JsonProperty("DETA_IMP")
-	private DetaImpDTO detaImp;
+	private DetaImpDTO detaImp;*/
 
 }
