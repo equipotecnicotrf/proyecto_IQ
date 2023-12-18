@@ -1,0 +1,216 @@
+2023-12-15 09:37:33.428  INFO 10984 --- [main] f.g.FacturaElectronicaServiceApplication : Starting FacturaElectronicaServiceApplication using Java 11.0.17 on DESKTOP-69T41TI with PID 10984 (C:\Users\Perilla Acosta\Documents\ProyectoIQ\oa-factura-electronica-service\target\classes started by Perilla Acosta in C:\Users\Perilla Acosta\Documents\ProyectoIQ\oa-factura-electronica-service)
+2023-12-15 09:37:33.463 DEBUG 10984 --- [main] f.g.FacturaElectronicaServiceApplication : Running with Spring Boot v2.7.6, Spring v5.3.24
+2023-12-15 09:37:33.464  INFO 10984 --- [main] f.g.FacturaElectronicaServiceApplication : The following 1 profile is active: "local"
+2023-12-15 09:37:38.424  INFO 10984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-15 09:37:38.491  INFO 10984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 0 JPA repository interfaces.
+2023-12-15 09:37:42.362  INFO 10984 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8283 (http)
+2023-12-15 09:37:42.394  INFO 10984 --- [main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8283"]
+2023-12-15 09:37:42.396  INFO 10984 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-15 09:37:42.396  INFO 10984 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-12-15 09:37:42.868  INFO 10984 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-15 09:37:42.869  INFO 10984 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8566 ms
+2023-12-15 09:37:43.012  INFO 10984 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-15 09:37:43.940  INFO 10984 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-15 09:37:43.983  INFO 10984 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-12-15 09:37:45.810  INFO 10984 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-12-15 09:37:45.819  INFO 10984 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Databases available at 'jdbc:h2:mem:mydb', 'jdbc:postgresql://150.136.114.58:5432/bdlegados'
+2023-12-15 09:37:47.437  INFO 10984 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-15 09:37:48.232  INFO 10984 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-12-15 09:37:49.144  INFO 10984 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-15 09:37:49.680  INFO 10984 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-12-15 09:37:54.863  INFO 10984 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-15 09:37:54.921  INFO 10984 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-15 09:37:57.129  WARN 10984 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-15 09:37:57.820  INFO 10984 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-12-15 09:37:58.718  WARN 10984 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+2023-12-15 09:37:58.739  INFO 10984 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: H2
+2023-12-15 09:37:58.806  INFO 10984 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2023-12-15 09:37:59.169  INFO 10984 --- [main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8283"]
+2023-12-15 09:37:59.223  INFO 10984 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8283 (http) with context path ''
+2023-12-15 09:37:59.225  INFO 10984 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-12-15 09:37:59.290  INFO 10984 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-12-15 09:37:59.364  INFO 10984 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-12-15 09:38:00.660  INFO 10984 --- [main] f.g.FacturaElectronicaServiceApplication : Started FacturaElectronicaServiceApplication in 29.358 seconds (JVM running for 32.182)
+2023-12-15 09:43:16.749  INFO 10984 --- [http-nio-8283-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-15 09:43:16.750  INFO 10984 --- [http-nio-8283-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-15 09:43:16.761  INFO 10984 --- [http-nio-8283-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2023-12-15 09:43:18.256  INFO 10984 --- [http-nio-8283-exec-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=GenerateFacturaElectronica]] launched with the following parameters: [{txtFilePath=/tmp, request={"head":[{"trxNumber":"28239","nombreEmisor":"IMAGE QUALITY OUTSOURCING S.A.S.","nitEmisor":830039329,"emisorDireccion":"IQ ALLIANZ CRA 13 A 29 24 P 7 Bogota, Bogota D.C","emisorDpto":"BOGOTA DC","fechaCreacion":"2023-12-13 09:20:09","emisorCiudad":"BOGOTA DC","codDptoEmisor":"11","codCiudadEmisor":"1111001","emisorPais":"CO","diasPago":30,"fechaDocu":"2023-12-13","nitCliente":"8600261825","ccNatural":"860026182","subtotal":2266100.76,"tipoCfd":"01","monedaDocu":"COP","fechaVencimiento":"2024-01-12","totalFactura":2606015.88,"pedido":"PRB23B1","docuEmisor":"830039329-8","trm":1.0,"digitoVerificacion":"5","billTo":{"partyName":"ALLIANZ SEGUROS S.A.","city":"BOGOTA DC","address1":"TORRE ALIANZ CRA 13 A NO.29-24PISO 10 SUR","state":"BOGOTA DC","country":"CO","infoBillTo":{"attribute2":"31","attribute8":"J"},"codDptoReceptor":"11","codCiudadReceptor":"11001","monedaImp":"COP"},"columna142":"2023-PROD-FAC-28239","detalle":[{"descripcion":"CANJE ENVIADO","cantidad":2.0,"unidadDian":"94","precio":750100.25,"subtotalLinea":1500200.5,"lineaCodArticulo":"CANJE ENVIADO","IvaLinea":285038.1,"TaxRate":19.0,"Tax":"CO_IVA"},{"descripcion":"IQS_AUDITORIA_MEDICA","cantidad":1.0,"unidadDian":"94","precio":765900.26,"subtotalLinea":765900.26,"lineaCodArticulo":"IQS_AUDITORIA_MEDICA","IvaLinea":145521.05,"TaxRate":19.0,"Tax":"CO_IVA"}],"headImp":[{"totImp":430559.0,"porcImp":19.0,"taxableAmt":2266100.76,"tax":"CO_IVA","unroundedTaxAmt":"430559.15"}],"customerTransactionId":"300000960248001","observaciones":" "}],"compania":{"nombre":"IQS_UNIDAD_NEGOCIO","tipo":"N","codigoPostal":"110111","codigoMunicipio":"110111","regimen":"O-13;O-15","responsabilidad":"O-13;O-15","email":"ggonzalez@oadmin.com","abreviatura":"IQS"}}, txtFilename=FacturaElectronica.txt, encoding=UTF-8, timekey=1702651397774}]
+2023-12-15 09:43:18.403  INFO 10984 --- [http-nio-8283-exec-1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [Step1.GenerarArchivo]
+2023-12-15 09:43:19.879  INFO 10984 --- [http-nio-8283-exec-1] o.s.batch.core.step.AbstractStep         : Step: [Step1.GenerarArchivo] executed in 1s473ms
+2023-12-15 09:43:19.907  INFO 10984 --- [http-nio-8283-exec-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=GenerateFacturaElectronica]] completed with the following parameters: [{txtFilePath=/tmp, request={"head":[{"trxNumber":"28239","nombreEmisor":"IMAGE QUALITY OUTSOURCING S.A.S.","nitEmisor":830039329,"emisorDireccion":"IQ ALLIANZ CRA 13 A 29 24 P 7 Bogota, Bogota D.C","emisorDpto":"BOGOTA DC","fechaCreacion":"2023-12-13 09:20:09","emisorCiudad":"BOGOTA DC","codDptoEmisor":"11","codCiudadEmisor":"1111001","emisorPais":"CO","diasPago":30,"fechaDocu":"2023-12-13","nitCliente":"8600261825","ccNatural":"860026182","subtotal":2266100.76,"tipoCfd":"01","monedaDocu":"COP","fechaVencimiento":"2024-01-12","totalFactura":2606015.88,"pedido":"PRB23B1","docuEmisor":"830039329-8","trm":1.0,"digitoVerificacion":"5","billTo":{"partyName":"ALLIANZ SEGUROS S.A.","city":"BOGOTA DC","address1":"TORRE ALIANZ CRA 13 A NO.29-24PISO 10 SUR","state":"BOGOTA DC","country":"CO","infoBillTo":{"attribute2":"31","attribute8":"J"},"codDptoReceptor":"11","codCiudadReceptor":"11001","monedaImp":"COP"},"columna142":"2023-PROD-FAC-28239","detalle":[{"descripcion":"CANJE ENVIADO","cantidad":2.0,"unidadDian":"94","precio":750100.25,"subtotalLinea":1500200.5,"lineaCodArticulo":"CANJE ENVIADO","IvaLinea":285038.1,"TaxRate":19.0,"Tax":"CO_IVA"},{"descripcion":"IQS_AUDITORIA_MEDICA","cantidad":1.0,"unidadDian":"94","precio":765900.26,"subtotalLinea":765900.26,"lineaCodArticulo":"IQS_AUDITORIA_MEDICA","IvaLinea":145521.05,"TaxRate":19.0,"Tax":"CO_IVA"}],"headImp":[{"totImp":430559.0,"porcImp":19.0,"taxableAmt":2266100.76,"tax":"CO_IVA","unroundedTaxAmt":"430559.15"}],"customerTransactionId":"300000960248001","observaciones":" "}],"compania":{"nombre":"IQS_UNIDAD_NEGOCIO","tipo":"N","codigoPostal":"110111","codigoMunicipio":"110111","regimen":"O-13;O-15","responsabilidad":"O-13;O-15","email":"ggonzalez@oadmin.com","abreviatura":"IQS"}}, txtFilename=FacturaElectronica.txt, encoding=UTF-8, timekey=1702651397774}] and the following status: [COMPLETED] in 1s556ms
+2023-12-15 10:30:41.387  INFO 10984 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-15 10:30:41.393  INFO 10984 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-12-15 10:30:41.411  INFO 10984 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-12-15 10:30:41.426  INFO 10984 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-12-15 10:30:41.429  INFO 10984 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-15 10:30:41.432  INFO 10984 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-15 10:30:58.216  INFO 10812 --- [main] f.g.FacturaElectronicaServiceApplication : Starting FacturaElectronicaServiceApplication using Java 11.0.17 on DESKTOP-69T41TI with PID 10812 (C:\Users\Perilla Acosta\Documents\ProyectoIQ\oa-factura-electronica-service\target\classes started by Perilla Acosta in C:\Users\Perilla Acosta\Documents\ProyectoIQ\oa-factura-electronica-service)
+2023-12-15 10:30:58.224 DEBUG 10812 --- [main] f.g.FacturaElectronicaServiceApplication : Running with Spring Boot v2.7.6, Spring v5.3.24
+2023-12-15 10:30:58.228  INFO 10812 --- [main] f.g.FacturaElectronicaServiceApplication : The following 1 profile is active: "local"
+2023-12-15 10:31:05.272  INFO 10812 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-15 10:31:05.388  INFO 10812 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 0 JPA repository interfaces.
+2023-12-15 10:31:10.771  INFO 10812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8283 (http)
+2023-12-15 10:31:10.816  INFO 10812 --- [main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8283"]
+2023-12-15 10:31:10.817  INFO 10812 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-15 10:31:10.818  INFO 10812 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-12-15 10:31:12.085  INFO 10812 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-15 10:31:12.086  INFO 10812 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 13040 ms
+2023-12-15 10:31:15.274  INFO 10812 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-15 10:31:18.963  INFO 10812 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-15 10:31:19.095  INFO 10812 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-12-15 10:31:20.868  INFO 10812 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-12-15 10:31:20.877  INFO 10812 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Databases available at 'jdbc:h2:mem:mydb', 'jdbc:postgresql://150.136.114.58:5432/bdlegados'
+2023-12-15 10:31:24.650  INFO 10812 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-15 10:31:25.138  INFO 10812 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-12-15 10:31:26.532  INFO 10812 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-15 10:31:28.152  INFO 10812 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-12-15 10:31:29.397  INFO 10812 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-15 10:31:29.537  INFO 10812 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-15 10:31:34.486  WARN 10812 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-15 10:31:38.147  INFO 10812 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-12-15 10:31:40.184  WARN 10812 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+2023-12-15 10:31:40.202  INFO 10812 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: H2
+2023-12-15 10:31:40.264  INFO 10812 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2023-12-15 10:31:42.205  INFO 10812 --- [main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8283"]
+2023-12-15 10:31:42.287  INFO 10812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8283 (http) with context path ''
+2023-12-15 10:31:42.291  INFO 10812 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-12-15 10:31:42.369  INFO 10812 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-12-15 10:31:42.787  INFO 10812 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-12-15 10:31:43.761  INFO 10812 --- [main] f.g.FacturaElectronicaServiceApplication : Started FacturaElectronicaServiceApplication in 48.394 seconds (JVM running for 51.558)
+2023-12-15 10:31:58.060  INFO 10812 --- [http-nio-8283-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-15 10:31:58.061  INFO 10812 --- [http-nio-8283-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-15 10:31:58.064  INFO 10812 --- [http-nio-8283-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-12-15 10:31:58.969  INFO 10812 --- [http-nio-8283-exec-2] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=GenerateFacturaElectronica]] launched with the following parameters: [{txtFilePath=/tmp, request={"head":[{"trxNumber":"28239","nombreEmisor":"IMAGE QUALITY OUTSOURCING S.A.S.","nitEmisor":830039329,"emisorDireccion":"IQ ALLIANZ CRA 13 A 29 24 P 7 Bogota, Bogota D.C","emisorDpto":"BOGOTA DC","fechaCreacion":"2023-12-13 09:20:09","emisorCiudad":"BOGOTA DC","codDptoEmisor":"11","codCiudadEmisor":"1111001","emisorPais":"CO","diasPago":30,"fechaDocu":"2023-12-13","nitCliente":"8600261825","ccNatural":"860026182","subtotal":2266100.76,"tipoCfd":"01","monedaDocu":"COP","fechaVencimiento":"2024-01-12","totalFactura":2606015.88,"pedido":"PRB23B1","docuEmisor":"830039329-8","trm":1.0,"digitoVerificacion":"5","billTo":{"partyName":"ALLIANZ SEGUROS S.A.","city":"BOGOTA DC","address1":"TORRE ALIANZ CRA 13 A NO.29-24PISO 10 SUR","state":"BOGOTA DC","country":"CO","infoBillTo":{"attribute2":"31","attribute8":"J"},"codDptoReceptor":"11","codCiudadReceptor":"11001","monedaImp":"COP"},"columna142":"2023-PROD-FAC-28239","detalle":[{"descripcion":"CANJE ENVIADO","cantidad":2.0,"unidadDian":"94","precio":750100.25,"subtotalLinea":1500200.5,"lineaCodArticulo":"CANJE ENVIADO","IvaLinea":285038.1,"TaxRate":19.0,"Tax":"CO_IVA"},{"descripcion":"IQS_AUDITORIA_MEDICA","cantidad":1.0,"unidadDian":"94","precio":765900.26,"subtotalLinea":765900.26,"lineaCodArticulo":"IQS_AUDITORIA_MEDICA","IvaLinea":145521.05,"TaxRate":19.0,"Tax":"CO_IVA"}],"headImp":[{"totImp":430559.0,"porcImp":19.0,"taxableAmt":2266100.76,"tax":"CO_IVA","unroundedTaxAmt":"430559.15"}],"customerTransactionId":"300000960248001","observaciones":" "}],"compania":{"nombre":"IQS_UNIDAD_NEGOCIO","tipo":"N","codigoPostal":"110111","codigoMunicipio":"110111","regimen":"O-13;O-15","responsabilidad":"O-13;O-15","email":"ggonzalez@oadmin.com","abreviatura":"IQS"}}, txtFilename=FacturaElectronica.txt, encoding=UTF-8, timekey=1702654318731}]
+2023-12-15 10:31:59.061  INFO 10812 --- [http-nio-8283-exec-2] o.s.batch.core.job.SimpleStepHandler     : Executing step: [Step1.GenerarArchivo]
+2023-12-15 10:34:00.317  WARN 10812 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m11s219ms839µs100ns).
+2023-12-15 10:34:00.319  WARN 10812 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=2m9s286ms3µs).
+2023-12-15 10:34:00.379  INFO 10812 --- [http-nio-8283-exec-2] o.s.batch.core.step.AbstractStep         : Step: [Step1.GenerarArchivo] executed in 2m1s317ms
+2023-12-15 10:34:00.392  INFO 10812 --- [http-nio-8283-exec-2] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=GenerateFacturaElectronica]] completed with the following parameters: [{txtFilePath=/tmp, request={"head":[{"trxNumber":"28239","nombreEmisor":"IMAGE QUALITY OUTSOURCING S.A.S.","nitEmisor":830039329,"emisorDireccion":"IQ ALLIANZ CRA 13 A 29 24 P 7 Bogota, Bogota D.C","emisorDpto":"BOGOTA DC","fechaCreacion":"2023-12-13 09:20:09","emisorCiudad":"BOGOTA DC","codDptoEmisor":"11","codCiudadEmisor":"1111001","emisorPais":"CO","diasPago":30,"fechaDocu":"2023-12-13","nitCliente":"8600261825","ccNatural":"860026182","subtotal":2266100.76,"tipoCfd":"01","monedaDocu":"COP","fechaVencimiento":"2024-01-12","totalFactura":2606015.88,"pedido":"PRB23B1","docuEmisor":"830039329-8","trm":1.0,"digitoVerificacion":"5","billTo":{"partyName":"ALLIANZ SEGUROS S.A.","city":"BOGOTA DC","address1":"TORRE ALIANZ CRA 13 A NO.29-24PISO 10 SUR","state":"BOGOTA DC","country":"CO","infoBillTo":{"attribute2":"31","attribute8":"J"},"codDptoReceptor":"11","codCiudadReceptor":"11001","monedaImp":"COP"},"columna142":"2023-PROD-FAC-28239","detalle":[{"descripcion":"CANJE ENVIADO","cantidad":2.0,"unidadDian":"94","precio":750100.25,"subtotalLinea":1500200.5,"lineaCodArticulo":"CANJE ENVIADO","IvaLinea":285038.1,"TaxRate":19.0,"Tax":"CO_IVA"},{"descripcion":"IQS_AUDITORIA_MEDICA","cantidad":1.0,"unidadDian":"94","precio":765900.26,"subtotalLinea":765900.26,"lineaCodArticulo":"IQS_AUDITORIA_MEDICA","IvaLinea":145521.05,"TaxRate":19.0,"Tax":"CO_IVA"}],"headImp":[{"totImp":430559.0,"porcImp":19.0,"taxableAmt":2266100.76,"tax":"CO_IVA","unroundedTaxAmt":"430559.15"}],"customerTransactionId":"300000960248001","observaciones":" "}],"compania":{"nombre":"IQS_UNIDAD_NEGOCIO","tipo":"N","codigoPostal":"110111","codigoMunicipio":"110111","regimen":"O-13;O-15","responsabilidad":"O-13;O-15","email":"ggonzalez@oadmin.com","abreviatura":"IQS"}}, txtFilename=FacturaElectronica.txt, encoding=UTF-8, timekey=1702654318731}] and the following status: [COMPLETED] in 2m1s363ms
+2023-12-15 10:34:00.502  WARN 10812 --- [http-nio-8283-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2023-12-15 10:34:00.506 ERROR 10812 --- [http-nio-8283-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-12-15 10:34:00.526 ERROR 10812 --- [http-nio-8283-exec-2] o.s.orm.jpa.EntityManagerFactoryUtils    : Failed to release JPA EntityManager
+
+org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:48)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.releaseConnection(LogicalConnectionManagedImpl.java:223)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.close(LogicalConnectionManagedImpl.java:261)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.close(JdbcCoordinatorImpl.java:175)
+	at org.hibernate.internal.AbstractSharedSessionContract.close(AbstractSharedSessionContract.java:374)
+	at org.hibernate.internal.SessionImpl.closeWithoutOpenChecks(SessionImpl.java:413)
+	at org.hibernate.internal.SessionImpl.close(SessionImpl.java:398)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362)
+	at com.sun.proxy.$Proxy118.close(Unknown Source)
+	at org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:427)
+	at org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor.afterCompletion(OpenEntityManagerInViewInterceptor.java:112)
+	at org.springframework.web.servlet.handler.WebRequestHandlerInterceptorAdapter.afterCompletion(WebRequestHandlerInterceptorAdapter.java:73)
+	at org.springframework.web.servlet.HandlerExecutionChain.triggerAfterCompletion(HandlerExecutionChain.java:178)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1167)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1375)
+	at org.h2.jdbc.JdbcConnection.clearWarnings(JdbcConnection.java:610)
+	at com.zaxxer.hikari.pool.ProxyConnection.close(ProxyConnection.java:267)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.closeConnection(DatasourceConnectionProviderImpl.java:127)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.releaseConnection(NonContextualJdbcConnectionAccess.java:49)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.releaseConnection(LogicalConnectionManagedImpl.java:219)
+	... 56 common frames omitted
+
+2023-12-15 10:34:02.053  INFO 10812 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-15 10:34:02.054  INFO 10812 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-12-15 10:34:02.059  INFO 10812 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-12-15 10:34:02.073  INFO 10812 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-12-15 10:34:02.074  INFO 10812 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-15 10:34:02.077  INFO 10812 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-15 15:10:46.432  INFO 11664 --- [main] f.g.FacturaElectronicaServiceApplication : Starting FacturaElectronicaServiceApplication using Java 11.0.17 on DESKTOP-69T41TI with PID 11664 (C:\Users\Perilla Acosta\Documents\ProyectoIQ\oa-factura-electronica-service\target\classes started by Perilla Acosta in C:\Users\Perilla Acosta\Documents\ProyectoIQ\oa-factura-electronica-service)
+2023-12-15 15:10:46.446 DEBUG 11664 --- [main] f.g.FacturaElectronicaServiceApplication : Running with Spring Boot v2.7.6, Spring v5.3.24
+2023-12-15 15:10:46.447  INFO 11664 --- [main] f.g.FacturaElectronicaServiceApplication : The following 1 profile is active: "local"
+2023-12-15 15:10:51.771  INFO 11664 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-15 15:10:51.939  INFO 11664 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JPA repository interfaces.
+2023-12-15 15:10:55.167  INFO 11664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8283 (http)
+2023-12-15 15:10:55.199  INFO 11664 --- [main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8283"]
+2023-12-15 15:10:55.200  INFO 11664 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-15 15:10:55.201  INFO 11664 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-12-15 15:10:55.590  INFO 11664 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-15 15:10:55.591  INFO 11664 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8843 ms
+2023-12-15 15:10:55.717  INFO 11664 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-15 15:10:56.476  INFO 11664 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-15 15:10:56.706  INFO 11664 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-12-15 15:10:58.220  INFO 11664 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-12-15 15:10:58.226  INFO 11664 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Databases available at 'jdbc:h2:mem:mydb', 'jdbc:postgresql://150.136.114.58:5432/bdlegados'
+2023-12-15 15:10:58.905  INFO 11664 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-15 15:10:59.074  INFO 11664 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-12-15 15:10:59.780  INFO 11664 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-15 15:11:00.118  INFO 11664 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-12-15 15:11:00.687  INFO 11664 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-15 15:11:00.707  INFO 11664 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-15 15:11:01.765  WARN 11664 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-15 15:11:02.423  INFO 11664 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-12-15 15:11:02.964  WARN 11664 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+2023-12-15 15:11:02.976  INFO 11664 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: H2
+2023-12-15 15:11:03.026  INFO 11664 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2023-12-15 15:11:03.275  INFO 11664 --- [main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8283"]
+2023-12-15 15:11:03.332  INFO 11664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8283 (http) with context path ''
+2023-12-15 15:11:03.334  INFO 11664 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-12-15 15:11:03.377  INFO 11664 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-12-15 15:11:03.436  INFO 11664 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-12-15 15:11:03.891  INFO 11664 --- [main] f.g.FacturaElectronicaServiceApplication : Started FacturaElectronicaServiceApplication in 19.498 seconds (JVM running for 21.132)
+2023-12-15 15:33:15.742  INFO 11664 --- [http-nio-8283-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-15 15:33:15.743  INFO 11664 --- [http-nio-8283-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-15 15:33:15.747  INFO 11664 --- [http-nio-8283-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-12-15 15:33:16.763  INFO 11664 --- [http-nio-8283-exec-2] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=GenerateFacturaElectronica]] launched with the following parameters: [{txtFilePath=/tmp, request={"head":[{"trxNumber":"28239","nombreEmisor":"IMAGE QUALITY OUTSOURCING S.A.S.","nitEmisor":830039329,"emisorDireccion":"IQ ALLIANZ CRA 13 A 29 24 P 7 Bogota, Bogota D.C","emisorDpto":"BOGOTA DC","fechaCreacion":"2023-12-13 09:20:09","emisorCiudad":"BOGOTA DC","codDptoEmisor":"11","codCiudadEmisor":"1111001","emisorPais":"CO","diasPago":30,"fechaDocu":"2023-12-13","nitCliente":"8600261825","ccNatural":"860026182","subtotal":2266100.76,"tipoCfd":"01","monedaDocu":"COP","fechaVencimiento":"2024-01-12","totalFactura":2606015.88,"pedido":"PRB23B1","docuEmisor":"830039329-8","trm":1.0,"digitoVerificacion":"5","billTo":{"partyName":"ALLIANZ SEGUROS S.A.","city":"BOGOTA DC","address1":"TORRE ALIANZ CRA 13 A NO.29-24PISO 10 SUR","state":"BOGOTA DC","country":"CO","infoBillTo":{"attribute2":"31","attribute8":"J"},"codDptoReceptor":"11","codCiudadReceptor":"11001","monedaImp":"COP"},"columna142":"2023-PROD-FAC-28239","detalle":[{"descripcion":"CANJE ENVIADO","cantidad":2.0,"unidadDian":"94","precio":750100.25,"subtotalLinea":1500200.5,"lineaCodArticulo":"CANJE ENVIADO","IvaLinea":285038.1,"TaxRate":19.0,"Tax":"CO_IVA"},{"descripcion":"IQS_AUDITORIA_MEDICA","cantidad":1.0,"unidadDian":"94","precio":765900.26,"subtotalLinea":765900.26,"lineaCodArticulo":"IQS_AUDITORIA_MEDICA","IvaLinea":145521.05,"TaxRate":19.0,"Tax":"CO_IVA"}],"headImp":[{"totImp":90644.0,"porcImp":4.0,"taxableAmt":2266100.76,"tax":"IQS_AR_RENTA","unroundedTaxAmt":"90644.03"},{"totImp":430559.0,"porcImp":19.0,"taxableAmt":2266100.76,"tax":"CO_IVA","unroundedTaxAmt":"430559.15"}],"customerTransactionId":"300000960248001","observaciones":" "}],"compania":{"nombre":"IQS_UNIDAD_NEGOCIO","tipo":"N","codigoPostal":"110111","codigoMunicipio":"110111","regimen":"O-13;O-15","responsabilidad":"O-13;O-15","email":"ggonzalez@oadmin.com","abreviatura":"IQS"}}, txtFilename=FacturaElectronica.txt, encoding=UTF-8, timekey=1702672396592}]
+2023-12-15 15:33:16.857  INFO 11664 --- [http-nio-8283-exec-2] o.s.batch.core.job.SimpleStepHandler     : Executing step: [Step1.GenerarArchivo]
+2023-12-15 15:33:17.758  INFO 11664 --- [http-nio-8283-exec-2] o.s.batch.core.step.AbstractStep         : Step: [Step1.GenerarArchivo] executed in 901ms
+2023-12-15 15:33:17.793  INFO 11664 --- [http-nio-8283-exec-2] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=GenerateFacturaElectronica]] completed with the following parameters: [{txtFilePath=/tmp, request={"head":[{"trxNumber":"28239","nombreEmisor":"IMAGE QUALITY OUTSOURCING S.A.S.","nitEmisor":830039329,"emisorDireccion":"IQ ALLIANZ CRA 13 A 29 24 P 7 Bogota, Bogota D.C","emisorDpto":"BOGOTA DC","fechaCreacion":"2023-12-13 09:20:09","emisorCiudad":"BOGOTA DC","codDptoEmisor":"11","codCiudadEmisor":"1111001","emisorPais":"CO","diasPago":30,"fechaDocu":"2023-12-13","nitCliente":"8600261825","ccNatural":"860026182","subtotal":2266100.76,"tipoCfd":"01","monedaDocu":"COP","fechaVencimiento":"2024-01-12","totalFactura":2606015.88,"pedido":"PRB23B1","docuEmisor":"830039329-8","trm":1.0,"digitoVerificacion":"5","billTo":{"partyName":"ALLIANZ SEGUROS S.A.","city":"BOGOTA DC","address1":"TORRE ALIANZ CRA 13 A NO.29-24PISO 10 SUR","state":"BOGOTA DC","country":"CO","infoBillTo":{"attribute2":"31","attribute8":"J"},"codDptoReceptor":"11","codCiudadReceptor":"11001","monedaImp":"COP"},"columna142":"2023-PROD-FAC-28239","detalle":[{"descripcion":"CANJE ENVIADO","cantidad":2.0,"unidadDian":"94","precio":750100.25,"subtotalLinea":1500200.5,"lineaCodArticulo":"CANJE ENVIADO","IvaLinea":285038.1,"TaxRate":19.0,"Tax":"CO_IVA"},{"descripcion":"IQS_AUDITORIA_MEDICA","cantidad":1.0,"unidadDian":"94","precio":765900.26,"subtotalLinea":765900.26,"lineaCodArticulo":"IQS_AUDITORIA_MEDICA","IvaLinea":145521.05,"TaxRate":19.0,"Tax":"CO_IVA"}],"headImp":[{"totImp":90644.0,"porcImp":4.0,"taxableAmt":2266100.76,"tax":"IQS_AR_RENTA","unroundedTaxAmt":"90644.03"},{"totImp":430559.0,"porcImp":19.0,"taxableAmt":2266100.76,"tax":"CO_IVA","unroundedTaxAmt":"430559.15"}],"customerTransactionId":"300000960248001","observaciones":" "}],"compania":{"nombre":"IQS_UNIDAD_NEGOCIO","tipo":"N","codigoPostal":"110111","codigoMunicipio":"110111","regimen":"O-13;O-15","responsabilidad":"O-13;O-15","email":"ggonzalez@oadmin.com","abreviatura":"IQS"}}, txtFilename=FacturaElectronica.txt, encoding=UTF-8, timekey=1702672396592}] and the following status: [COMPLETED] in 958ms

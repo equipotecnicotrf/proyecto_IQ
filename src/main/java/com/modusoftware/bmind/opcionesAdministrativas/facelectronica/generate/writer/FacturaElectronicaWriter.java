@@ -304,15 +304,16 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							precio = df.format(detalle.getPrecio());
 							subtotalLinea = df.format(Math.abs(detalle.getSubtotalLinea()));
 							//taxAmt = df.format(Math.abs(detalle.getDetaImp().getTaxAmt()));
-							taxAmt = df.format(Math.abs(detalle.getIvaLinea()));
+							//taxAmt = df.format(Math.abs(detalle.getIvaLinea())) == null ? "0" : df.format(Math.abs(detalle.getIvaLinea()));
+							taxAmt = detalle.getIvaLinea() == null ? "0" : df.format(Math.abs(detalle.getIvaLinea()));
 							//unroundedTax = df.format(detalle.getDetaImp().getUnroundedTaxAmt());
-							unroundedTax = df.format(detalle.getIvaLinea());
+							unroundedTax = detalle.getIvaLinea() == null ? "0" : df.format(detalle.getIvaLinea());
 							//ivaAcumulado += Math.abs(detalle.getDetaImp().getTaxAmt());
-							ivaAcumulado += Math.abs(detalle.getIvaLinea());
+							ivaAcumulado += Math.abs(detalle.getIvaLinea() == null ? 0 : detalle.getIvaLinea());
 						}
 						
 						
-						String taxRateDecimal = df.format(detalle.getTaxRate());
+						String taxRateDecimal = detalle.getTaxRate() == null ? "0" : df.format(detalle.getTaxRate());
 						Boolean hasTaxes = detalle.getIvaLinea() == null || detalle.getIvaLinea() == 0 ? false : true;
 
 						//Lines
@@ -391,7 +392,7 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 						/* 89 */.append("|")/* 90 */.append("|")/* 91 */.append("|")
 						/* 92 */.append("|")/* 93 */.append("|")/* 94 */.append("|")/* 95 */.append("|")
 						/* 96 */.append("|")/* 97 */.append("|")/* 98 */.append("|")
-						/* 99 */.append("|")//Se borro logica
+						/* 99 */.append((char) 92).append("I").append("|")
 						/* 100 */.append(hasTaxes == true ? "TR" : "").append("|")
 						/* 101 */.append(hasTaxes == true ? df.format(detalle.getTaxRate()) : "").append("|")
 						/* 102 */.append(hasTaxes == true ? unroundedTax : "").append("|")
@@ -418,7 +419,8 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 					Double diferenciaIva = 0.0;
 					Double retenciones = 0.0;
 					Double ivaCalculado = 0.0;
-					
+
+					// Head impuestos
 					for (HeadImpDTO impDto : item.getHeadImp()) {
 
 						String taxableAmount = "";
@@ -455,16 +457,15 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 
 							/* 1 */sbImpuestos.append("[@@CRLF]RE").append("|");
 
-							if (impDto.getTax().equals("LIG_AR_RENTA")) {
+							if (impDto.getTax().equals("IQS_AR_RENTA")) {
+
 								/* 2 */sbImpuestos.append("06").append("|");
-							} else if (impDto.getTax().equals("OAD_AR_ICA_DB")
-									|| impDto.getTax().equals("FTX_AR_ICA_BGTA")
-									|| impDto.getTax().equals("PTQ_AR_ICA_SABANETA")) {
+							} else if (impDto.getTax().equals("IQS_AR_RTICA_BOGOTA")) {
 								/* 2 */sbImpuestos.append(impuestoDescripcionIca).append("|");
 								montoImporte = df.format(impDto.getTotImp());
 							} else {
 								/* 2 */sbImpuestos.append("05").append("|");
-								if (impDto.getTax().equals("FTX_AR_RETEIVA")
+								if (impDto.getTax().equals("IQS_AR_RETEIVA")
 										&& !String.valueOf(item.getCompania().getTipo()).equals("N")) {
 									montoImporte = df.format(ivaAcumulado * 0.15);
 								}
@@ -473,12 +474,7 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 
 						String taxTotal = "0.0";
 
-						if (impDto.getTax().equals("FTX_AR_RETEIVA") || impDto.getTax().equals("PRI_AR_RETEIVA")
-								|| impDto.getTax().equals("AZE_AR_RETEIVA") || impDto.getTax().equals("OAD_AR_RETEIVA")
-								|| impDto.getTax().equals("OAD_AR_ICA_DB") || impDto.getTax().equals("FTX_AR_ICA_BGTA")
-								|| impDto.getTax().equals("LIG_AR_RENTA") || impDto.getTax().equals("PTQ_AR_RETEIVA")
-								|| impDto.getTax().equals("PTQ_AR_ICA_SABANETA")) {
-							
+						if (impDto.getTax().equals("IQS_AR_RENTA") || impDto.getTax().equals("IQS_AR_RETEIVA")) {
 
 							if (item.getCompania().getTipo().equals("N")) {
 								totalImp = impDto.getTotImp();
@@ -700,7 +696,7 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							/* 95 */.append("|")//Se borro logica
 							/* 96 */.append("|")
 							/* 97 */.append("|")
-							/* 98 */.append(item.getColumna98()).append("|")
+							/* 98 */.append(item.getColumna98() == null ? "" : item.getColumna98()).append("|")
 							/* 99 */.append("|")
 							/* 100 */.append(campo56.contains(",") ? NumerosALetras.convertirNumeroALetras(Double.valueOf(campo56.replace(",",".")), monedaDocumento): NumerosALetras.convertirNumeroALetras(Double.valueOf(campo56), monedaDocumento)).append("|")
 							/* 101 */.append("|")
@@ -732,7 +728,7 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							/* 127 */.append(item.getMailEnvio() == null ? "" : item.getMailEnvio()).append("|")
 							/* 128 */.append("|")
 							/* 129 */.append(item.getRemision() == null ? "" : item.getRemision()).append("|")
-							/* 130 */.append(item.getPedido() == null ? "" : item.getPedido()).append("|")
+							/* 130 */.append("|")// Se borro logica
 							/* 131 */.append("|")//Se borro logica
 							/* 132 */.append("|")
 							/* 133 */.append("|")
@@ -748,7 +744,7 @@ public class FacturaElectronicaWriter extends FlatFileItemWriter<HeadDTO> {
 							         .append(item.getTipoCfd()).append("-").append(item.getCompania().getTipo()).append("-")
 							         .append(resolucionDTO.getSerie()).append("-").append(item.getTrxNumber()).append("|")*/
 							/* 142 */.append(item.getColumna142()).append("|")
-							/* 143 */.append(item.getColumna143()).append("|")
+							/* 143 */.append(item.getColumna143()  == null ? "" : item.getColumna143()).append("|")
 							/* 144 */.append(docuEmisorSubString.substring(10, 11) == null ? "" : docuEmisorSubString.substring(10, 11)).append("|")
 							/* 145 */.append("|")
 							/* 146 */.append(item.getCompania().getTipo().equals("N") ? item.getDigitoVerificacion() : "").append("|")

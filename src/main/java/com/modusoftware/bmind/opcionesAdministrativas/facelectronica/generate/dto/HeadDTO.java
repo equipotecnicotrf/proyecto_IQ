@@ -118,7 +118,7 @@ public class HeadDTO {
 	@JsonProperty("COLUMNA_98")
 	private String columna98;
 
-	@JsonProperty("COLUMNA_142")
+	@JsonProperty("CAMPO_142")
 	private String columna142;
 
 	@JsonProperty("COLUMNA_143")

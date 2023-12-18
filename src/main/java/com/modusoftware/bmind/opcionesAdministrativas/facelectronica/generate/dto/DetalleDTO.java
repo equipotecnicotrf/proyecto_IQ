@@ -68,7 +68,7 @@ public class DetalleDTO {
 	@NotNull
 	@ApiModelProperty(notes = "Tax")
 	@JsonProperty("TAX")
-	private Double Tax;//Campo que sustituye el tax del DetaImpDTO
+	private String Tax;//Campo que sustituye el tax del DetaImpDTO
 	
 	/*@NotNull
 	@ApiModelProperty(notes = "DetaImpDTO")//Este campo se elimina debido a que se elimino el data set de DETA_IMP
